@@ -13,7 +13,7 @@ public class StudentService
     {
         try
         {
-            Student s = new Student();
+            var s = new Student();
 
             Console.Write("Enter name: ");
             s.Name = Console.ReadLine();
@@ -103,7 +103,7 @@ public class StudentService
 
     internal void UpdateStudentResult()
     {
-        Student s = new Student();
+        var s = new Student();
 
         Console.Write("Enter Id of the Student you want to update: ");
         s.Id = int.Parse(Console.ReadLine());
