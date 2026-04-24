@@ -1,4 +1,5 @@
-﻿using System;
+﻿// Improved student result system
+using System;
 
 class Program
 {
@@ -15,7 +16,8 @@ class Program
             Console.WriteLine("3. Delete A Student Result");
             Console.WriteLine("4. Update A Student Result");
             Console.WriteLine("5. Exit");
-            Console.Write("Select option: ");
+            Console.Write("Select option: ")
+            Console.WriteLine("3. Search Student"); ;
 
             string choice = Console.ReadLine();
 

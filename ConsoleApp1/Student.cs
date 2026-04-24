@@ -27,6 +27,8 @@ public class Student
 
 public class Student
 {
+    private object service;
+
     public string Name { get; set; }
     public int Score { get; set; }
 
@@ -36,5 +38,7 @@ public class Student
         else if (Score >= 60) return "B";
         else if (Score >= 50) return "C";
         else return "F";
+        else if (choice == 3)
+            service.SearchStudent();
     }
 }

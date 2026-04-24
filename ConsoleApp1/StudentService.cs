@@ -165,4 +165,25 @@ public class StudentService
             }
         }
     }
+    public void SearchStudent()
+    {
+        Console.Write("Enter name to search: ");
+        string name = Console.ReadLine();
+
+        bool found = false;
+
+        foreach (var s in students)
+        {
+            if (s.Name.ToLower() == name.ToLower())
+            {
+                Console.WriteLine($"Found: {s.Name} - {s.Score} - {s.GetGrade()}");
+                found = true;
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine("Student not found.");
+        }
+    }
 }
