@@ -28,6 +28,7 @@ class Program
                 case "2":
                     service.ViewResults();
                     break;
+
                 case "3":
                     service.DeleteStudent();
                     break;
@@ -35,6 +36,7 @@ class Program
                 case "4":
                     service.UpdateStudentResult();
                     break;
+
                 case "5":
                     running = false;
                     break;

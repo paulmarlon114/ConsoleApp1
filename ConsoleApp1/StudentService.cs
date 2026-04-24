@@ -136,4 +136,33 @@ public class StudentService
             cmd.ExecuteNonQuery();
         }
     }
+    public void SearchStudent()
+    {
+        Console.Write("Enter name to search: ");
+        string name = Console.ReadLine();
+
+        using (var conn = new NpgsqlConnection(connectionString))
+        {
+            conn.Open();
+
+            string query = "SELECT * FROM students WHERE name = @name";
+
+            using (var cmd = new NpgsqlCommand(query, conn))
+            {
+                cmd.Parameters.AddWithValue("name", name);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Console.WriteLine($"Found: {reader["name"]}");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Student not found.");
+                    }
+                }
+            }
+        }
+    }
 }

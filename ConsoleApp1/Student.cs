@@ -24,3 +24,17 @@ public class Student
 
     public string GetStatus() => GetAverage() >= 50 ? "Pass" : "Fail";
 }
+
+public class Student
+{
+    public string Name { get; set; }
+    public int Score { get; set; }
+
+    public string GetGrade()
+    {
+        if (Score >= 70) return "A";
+        else if (Score >= 60) return "B";
+        else if (Score >= 50) return "C";
+        else return "F";
+    }
+}
