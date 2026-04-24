@@ -13,13 +13,13 @@ class Program
             Console.WriteLine("\n=== STUDENT SYSTEM ===");
             Console.WriteLine("1. Add Student");
             Console.WriteLine("2. View Results");
-            Console.WriteLine("3. Delete A Student Result");
-            Console.WriteLine("4. Update A Student Result");
-            Console.WriteLine("5. Exit");
-            Console.Write("Select option: ")
-            Console.WriteLine("3. Search Student"); ;
+            Console.WriteLine("3. Delete Student");
+            Console.WriteLine("4. Update Student");
+            Console.WriteLine("5. Search Student");
+            Console.WriteLine("6. Exit");
 
-            string choice = Console.ReadLine();
+            Console.Write("Select option: ");
+            Console.WriteLine("7. Top Student");
 
             switch (choice)
             {
@@ -40,7 +40,15 @@ class Program
                     break;
 
                 case "5":
+                    service.SearchStudent();
+                    break;
+
+                case "6":
                     running = false;
+                    break;
+
+                case "7":
+                    service.ShowTopStudent();
                     break;
 
                 default:

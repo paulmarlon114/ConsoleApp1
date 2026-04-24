@@ -141,7 +141,7 @@ public class StudentService
         Console.Write("Enter name to search: ");
         string name = Console.ReadLine();
 
-        using (var conn = new NpgsqlConnection(connectionString))
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
         {
             conn.Open();
 
@@ -149,13 +149,16 @@ public class StudentService
 
             using (var cmd = new NpgsqlCommand(query, conn))
             {
-                cmd.Parameters.AddWithValue("name", name);
+                cmd.Parameters.AddWithValue("@name", name);
 
                 using (var reader = cmd.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        Console.WriteLine($"Found: {reader["name"]}");
+                        Console.WriteLine($"\nName: {reader["name"]}");
+                        Console.WriteLine($"Math: {reader["math"]}");
+                        Console.WriteLine($"English: {reader["english"]}");
+                        Console.WriteLine($"Science: {reader["science"]}");
                     }
                     else
                     {
@@ -165,25 +168,26 @@ public class StudentService
             }
         }
     }
-    public void SearchStudent()
+    public void ShowTopStudent()
     {
-        Console.Write("Enter name to search: ");
-        string name = Console.ReadLine();
-
-        bool found = false;
-
-        foreach (var s in students)
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
         {
-            if (s.Name.ToLower() == name.ToLower())
+            conn.Open();
+
+            string query = "SELECT * FROM students ORDER BY (math + english + science) DESC LIMIT 1";
+
+            using (var cmd = new NpgsqlCommand(query, conn))
+            using (var reader = cmd.ExecuteReader())
             {
-                Console.WriteLine($"Found: {s.Name} - {s.Score} - {s.GetGrade()}");
-                found = true;
+                if (reader.Read())
+                {
+                    Console.WriteLine($"\nTop Student: {reader["name"]}");
+                }
+                else
+                {
+                    Console.WriteLine("No data found.");
+                }
             }
-        }
-
-        if (!found)
-        {
-            Console.WriteLine("Student not found.");
         }
     }
 }
