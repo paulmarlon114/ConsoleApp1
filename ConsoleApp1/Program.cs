@@ -3,6 +3,7 @@ using System;
 
 class Program
 {
+
     static void Main()
     {
         StudentService service = new StudentService();
@@ -18,9 +19,11 @@ class Program
             Console.WriteLine("5. Search Student");
             Console.WriteLine("6. Exit");
 
-            Console.Write("Select option: ");
             Console.WriteLine("7. Top Student");
+            Console.WriteLine("7. Count Students");
 
+            Console.Write("Select option: ");
+            var choice =  Console.ReadLine();
             switch (choice)
             {
                 case "1":
@@ -49,6 +52,10 @@ class Program
 
                 case "7":
                     service.ShowTopStudent();
+                    break;
+
+                case "8":
+                    service.CountStudents();
                     break;
 
                 default:

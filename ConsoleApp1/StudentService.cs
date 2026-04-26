@@ -190,4 +190,18 @@ public class StudentService
             }
         }
     }
+    public void CountStudents()
+    {
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
+        {
+            conn.Open();
+
+            string query = "SELECT COUNT(*) FROM students";
+            var cmd = new NpgsqlCommand(query, conn);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            Console.WriteLine($"Total Students: {count}");
+        }
+    }
 }
