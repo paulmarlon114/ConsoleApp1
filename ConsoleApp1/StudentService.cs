@@ -204,4 +204,21 @@ public class StudentService
             Console.WriteLine($"Total Students: {count}");
         }
     }
+    public void ShowPassedStudents()
+    {
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
+        {
+            conn.Open();
+
+            string query = "SELECT * FROM students WHERE (math + english + science)/3 >= 50";
+
+            var cmd = new NpgsqlCommand(query, conn);
+            var reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Console.WriteLine($"Name: {reader["name"]}");
+            }
+        }
+    }
 }
