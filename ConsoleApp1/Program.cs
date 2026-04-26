@@ -11,6 +11,7 @@ class Program
 
         while (running)
         {
+            Console.WriteLine("Welcome to Student Result System!");
             Console.WriteLine("\n=== STUDENT SYSTEM ===");
             Console.WriteLine("1. Add Student");
             Console.WriteLine("2. View Results");
