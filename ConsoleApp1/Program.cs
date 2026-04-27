@@ -24,6 +24,7 @@ class Program
             Console.WriteLine("8. Count Students");
             Console.WriteLine("9. Show Passed Students");
             Console.WriteLine("10. Show Failed Students");
+            Console.WriteLine("11. Show All Names");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -67,6 +68,10 @@ class Program
 
                 case "10":
                     service.ShowFailedStudents();
+                    break;
+
+                case "11":
+                    service.ShowAllNames();
                     break;
 
                 default:

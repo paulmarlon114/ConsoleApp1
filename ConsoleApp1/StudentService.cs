@@ -238,4 +238,22 @@ public class StudentService
             }
         }
     }
+    public void ShowAllNames()
+    {
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
+        {
+            conn.Open();
+
+            string query = "SELECT name FROM students";
+            var cmd = new NpgsqlCommand(query, conn);
+            var reader = cmd.ExecuteReader();
+
+            Console.WriteLine("\n--- STUDENT NAMES ---");
+
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["name"]);
+            }
+        }
+    }
 }
