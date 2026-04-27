@@ -300,4 +300,22 @@ public class StudentService
             Console.WriteLine($"Failed Students: {count}");
         }
     }
+    public void SortByName()
+    {
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
+        {
+            conn.Open();
+
+            string query = "SELECT * FROM students ORDER BY name ASC";
+            var cmd = new NpgsqlCommand(query, conn);
+            var reader = cmd.ExecuteReader();
+
+            Console.WriteLine("\n--- SORTED STUDENTS ---");
+
+            while (reader.Read())
+            {
+                Console.WriteLine(reader["name"]);
+            }
+        }
+    }
 }
