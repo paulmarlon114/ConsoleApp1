@@ -272,4 +272,18 @@ public class StudentService
             }
         }
     }
+    public void CountPassed()
+    {
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
+        {
+            conn.Open();
+
+            string query = "SELECT COUNT(*) FROM students WHERE (math + english + science)/3 >= 50";
+            var cmd = new NpgsqlCommand(query, conn);
+
+            int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+            Console.WriteLine($"Passed Students: {count}");
+        }
+    }
 }
