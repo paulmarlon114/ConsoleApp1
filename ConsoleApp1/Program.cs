@@ -25,6 +25,7 @@ class Program
             Console.WriteLine("9. Show Passed Students");
             Console.WriteLine("10. Show Failed Students");
             Console.WriteLine("11. Show All Names");
+            Console.WriteLine("12. Highest Average");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -72,6 +73,10 @@ class Program
 
                 case "11":
                     service.ShowAllNames();
+                    break;
+
+                case "12":
+                    service.HighestAverage();
                     break;
 
                 default:

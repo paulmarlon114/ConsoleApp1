@@ -256,4 +256,20 @@ public class StudentService
             }
         }
     }
+    public void HighestAverage()
+    {
+        using (var conn = new NpgsqlConnection(PostgressConnector.ConnectionString))
+        {
+            conn.Open();
+
+            string query = "SELECT *, (math + english + science)/3 AS avg FROM students ORDER BY avg DESC LIMIT 1";
+            var cmd = new NpgsqlCommand(query, conn);
+            var reader = cmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                Console.WriteLine($"Top Student: {reader["name"]} - Avg: {reader["avg"]}");
+            }
+        }
+    }
 }
