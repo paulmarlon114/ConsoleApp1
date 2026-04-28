@@ -29,6 +29,7 @@ class Program
             Console.WriteLine("13. Count Passed Students");
             Console.WriteLine("14. Count Failed Students");
             Console.WriteLine("15. Sort Students By Name");
+            Console.WriteLine("16. Sort By Score");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -92,6 +93,10 @@ class Program
 
                 case "15":
                     service.SortByName();
+                    break;
+
+                case "16":
+                    service.SortByScore();
                     break;
 
                 default:

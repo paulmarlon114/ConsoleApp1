@@ -318,4 +318,13 @@ public class StudentService
             }
         }
     }
+    public void SortByScore()
+    {
+        var sorted = students.OrderByDescending(s => s.Score);
+
+        foreach (var s in sorted)
+        {
+            Console.WriteLine($"{s.Name} - {s.Score}");
+        }
+    }
 }
