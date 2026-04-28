@@ -338,4 +338,13 @@ public class StudentService
         var lowest = students.OrderBy(s => s.Score).First();
         Console.WriteLine($"Lowest: {lowest.Name} - {lowest.Score}");
     }
+    public void CheckStudentExists()
+    {
+        Console.Write("Enter name: ");
+        string name = Console.ReadLine();
+
+        bool exists = students.Any(s => s.Name.ToLower() == name.ToLower());
+
+        Console.WriteLine(exists ? "Student exists." : "Student does not exist.");
+    }
 }

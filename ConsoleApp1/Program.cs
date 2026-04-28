@@ -31,6 +31,7 @@ class Program
             Console.WriteLine("15. Sort Students By Name");
             Console.WriteLine("16. Sort By Score");
             Console.WriteLine("17. Lowest Student");
+            Console.WriteLine("18. Check Student Exists");
 
 
             Console.Write("Select option: ");
@@ -105,6 +106,9 @@ class Program
                     service.ShowLowestStudent();
                     break;
 
+                case "18":
+                    service.CheckStudentExists();
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice!");
