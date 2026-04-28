@@ -327,4 +327,15 @@ public class StudentService
             Console.WriteLine($"{s.Name} - {s.Score}");
         }
     }
+    public void ShowLowestStudent()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        var lowest = students.OrderBy(s => s.Score).First();
+        Console.WriteLine($"Lowest: {lowest.Name} - {lowest.Score}");
+    }
 }

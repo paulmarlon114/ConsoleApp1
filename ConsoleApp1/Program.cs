@@ -30,6 +30,8 @@ class Program
             Console.WriteLine("14. Count Failed Students");
             Console.WriteLine("15. Sort Students By Name");
             Console.WriteLine("16. Sort By Score");
+            Console.WriteLine("17. Lowest Student");
+
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -98,6 +100,11 @@ class Program
                 case "16":
                     service.SortByScore();
                     break;
+
+                case "17":
+                    service.ShowLowestStudent();
+                    break;
+
 
                 default:
                     Console.WriteLine("Invalid choice!");
