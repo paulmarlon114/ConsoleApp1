@@ -347,4 +347,9 @@ public class StudentService
 
         Console.WriteLine(exists ? "Student exists." : "Student does not exist.");
     }
+    public void TotalScore()
+    {
+        int total = students.Sum(s => s.Score);
+        Console.WriteLine($"Total Score of all students: {total}");
+    }
 }
