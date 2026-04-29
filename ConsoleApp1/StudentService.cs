@@ -352,4 +352,9 @@ public class StudentService
         int total = students.Sum(s => s.Score);
         Console.WriteLine($"Total Score of all students: {total}");
     }
+    public void ClearAllStudents()
+    {
+        students.Clear();
+        Console.WriteLine("All students removed.");
+    }
 }

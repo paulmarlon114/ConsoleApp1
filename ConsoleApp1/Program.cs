@@ -33,6 +33,7 @@ class Program
             Console.WriteLine("17. Lowest Student");
             Console.WriteLine("18. Check Student Exists");
             Console.WriteLine("19. Total Score");
+            Console.WriteLine("20. Clear All Students");
 
 
             Console.Write("Select option: ");
@@ -115,6 +116,9 @@ class Program
                     service.TotalScore();
                     break;
 
+                case "20":
+                    service.ClearAllStudents();
+                    break;
 
                 default:
                     Console.WriteLine("Invalid choice!");
