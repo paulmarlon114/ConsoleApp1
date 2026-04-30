@@ -35,6 +35,7 @@ class Program
             Console.WriteLine("19. Total Score");
             Console.WriteLine("20. Clear All Students");
             Console.WriteLine("21. Students Above Average");
+            Console.WriteLine("22. Students Below Average");
 
 
             Console.Write("Select option: ");
@@ -123,6 +124,10 @@ class Program
 
                 case "21":
                     service.StudentsAboveAverage();
+                    break;
+
+                case "22":
+                    service.StudentsBelowAverage();
                     break;
 
                 default:

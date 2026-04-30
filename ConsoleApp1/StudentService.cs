@@ -375,4 +375,21 @@ public class StudentService
             Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
         }
     }
+    public void StudentsBelowAverage()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        double avg = students.Average(s => s.GetAverage());
+
+        var result = students.Where(s => s.GetAverage() < avg);
+
+        foreach (var s in result)
+        {
+            Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
+        }
+    }
 }
