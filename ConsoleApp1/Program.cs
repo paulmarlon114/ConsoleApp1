@@ -36,7 +36,7 @@ class Program
             Console.WriteLine("20. Clear All Students");
             Console.WriteLine("21. Students Above Average");
             Console.WriteLine("22. Students Below Average");
-
+            Console.WriteLine("23. Filter By Grade");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -128,6 +128,10 @@ class Program
 
                 case "22":
                     service.StudentsBelowAverage();
+                    break;
+
+                case "23":
+                    service.FilterByGrade();
                     break;
 
                 default:

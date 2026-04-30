@@ -392,4 +392,16 @@ public class StudentService
             Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
         }
     }
+    public void FilterByGrade()
+    {
+        Console.Write("Enter grade (A/B/C/F): ");
+        string grade = Console.ReadLine().ToUpper();
+
+        var result = students.Where(s => s.GetGrade() == grade);
+
+        foreach (var s in result)
+        {
+            Console.WriteLine($"{s.Name} - {s.GetGrade()}");
+        }
+    }
 }
