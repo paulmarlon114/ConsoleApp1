@@ -358,4 +358,21 @@ public class StudentService
         students.Clear();
         Console.WriteLine("All students removed.");
     }
+    public void StudentsAboveAverage()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        double avg = students.Average(s => s.GetAverage());
+
+        var result = students.Where(s => s.GetAverage() > avg);
+
+        foreach (var s in result)
+        {
+            Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
+        }
+    }
 }

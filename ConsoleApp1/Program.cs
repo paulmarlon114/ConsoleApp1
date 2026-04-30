@@ -34,6 +34,7 @@ class Program
             Console.WriteLine("18. Check Student Exists");
             Console.WriteLine("19. Total Score");
             Console.WriteLine("20. Clear All Students");
+            Console.WriteLine("21. Students Above Average");
 
 
             Console.Write("Select option: ");
@@ -118,6 +119,10 @@ class Program
 
                 case "20":
                     service.ClearAllStudents();
+                    break;
+
+                case "21":
+                    service.StudentsAboveAverage();
                     break;
 
                 default:
