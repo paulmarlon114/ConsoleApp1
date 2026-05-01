@@ -404,4 +404,13 @@ public class StudentService
             Console.WriteLine($"{s.Name} - {s.GetGrade()}");
         }
     }
+    public void CountByGrade()
+    {
+        var groups = students.GroupBy(s => s.GetGrade());
+
+        foreach (var g in groups)
+        {
+            Console.WriteLine($"Grade {g.Key}: {g.Count()} students");
+        }
+    }
 }
