@@ -413,4 +413,16 @@ public class StudentService
             Console.WriteLine($"Grade {g.Key}: {g.Count()} students");
         }
     }
+    public void ShowFirstStudent()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        var first = students.First();
+
+        Console.WriteLine($"First Student: {first.Name}");
+    }
 }

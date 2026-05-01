@@ -38,6 +38,7 @@ class Program
             Console.WriteLine("22. Students Below Average");
             Console.WriteLine("23. Filter By Grade");
             Console.WriteLine("24. Count By Grade");
+            Console.WriteLine("25. First Student Added");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -138,6 +139,11 @@ class Program
                 case "24":
                     service.CountByGrade();
                     break;
+
+                case "25":
+                    service.ShowFirstStudent();
+                    break;
+
                 default:
                     Console.WriteLine("Invalid choice!");
                     break;
