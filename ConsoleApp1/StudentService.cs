@@ -437,4 +437,19 @@ public class StudentService
 
         Console.WriteLine($"Lowest: {lowest.Name} - {lowest.GetAverage():F2}");
     }
+    public void StudentsInRange()
+    {
+        Console.Write("Enter min score: ");
+        int min = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter max score: ");
+        int max = int.Parse(Console.ReadLine());
+
+        var result = students.Where(s => s.GetAverage() >= min && s.GetAverage() <= max);
+
+        foreach (var s in result)
+        {
+            Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
+        }
+    }
 }
