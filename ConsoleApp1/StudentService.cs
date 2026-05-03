@@ -425,4 +425,16 @@ public class StudentService
 
         Console.WriteLine($"First Student: {first.Name}");
     }
+    public void ShowLowestStudent()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        var lowest = students.OrderBy(s => s.GetAverage()).First();
+
+        Console.WriteLine($"Lowest: {lowest.Name} - {lowest.GetAverage():F2}");
+    }
 }
