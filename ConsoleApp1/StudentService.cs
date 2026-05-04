@@ -452,4 +452,10 @@ public class StudentService
             Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
         }
     }
+    public void TotalScores()
+    {
+        int total = students.Sum(s => s.GetTotal());
+
+        Console.WriteLine($"Total Score of All Students: {total}");
+    }
 }

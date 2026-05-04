@@ -41,6 +41,7 @@ class Program
             Console.WriteLine("25. First Student Added");
             Console.WriteLine("26. Lowest Student");
             Console.WriteLine("27. Students In Range");
+            Console.WriteLine("28. Total Scores");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -152,6 +153,10 @@ class Program
 
                 case "27":
                     service.StudentsInRange();
+                    break;
+
+                case "28":
+                    service.TotalScores();
                     break;
 
                 default:
