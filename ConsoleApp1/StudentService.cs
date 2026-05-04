@@ -458,4 +458,13 @@ public class StudentService
 
         Console.WriteLine($"Total Score of All Students: {total}");
     }
+    public void SortByAverage()
+    {
+        var sorted = students.OrderByDescending(s => s.GetAverage());
+
+        foreach (var s in sorted)
+        {
+            Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
+        }
+    }
 }

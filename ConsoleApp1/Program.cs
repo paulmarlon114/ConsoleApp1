@@ -30,6 +30,7 @@ class Program
             Console.WriteLine("14. Count Failed Students");
             Console.WriteLine("15. Sort Students By Name");
             Console.WriteLine("16. Sort By Score");
+
             Console.WriteLine("17. Lowest Student");
             Console.WriteLine("18. Check Student Exists");
             Console.WriteLine("19. Total Score");
@@ -40,8 +41,11 @@ class Program
             Console.WriteLine("24. Count By Grade");
             Console.WriteLine("25. First Student Added");
             Console.WriteLine("26. Lowest Student");
+
             Console.WriteLine("27. Students In Range");
             Console.WriteLine("28. Total Scores");
+            Console.WriteLine("29. Sort By Average");
+
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -157,6 +161,10 @@ class Program
 
                 case "28":
                     service.TotalScores();
+                    break;
+
+                case "29":
+                    service.SortByAverage();
                     break;
 
                 default:
