@@ -47,7 +47,7 @@ class Program
             Console.WriteLine("29. Sort By Average");
             Console.WriteLine("31. Overall Average");
             Console.WriteLine("32. Highest Math Score");
-
+            Console.WriteLine("33. Count Grade A");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -175,6 +175,10 @@ class Program
 
                 case "32":
                     service.HighestMathScore();
+                    break;
+
+                case "33":
+                    service.CountGradeA();
                     break;
 
                 default:

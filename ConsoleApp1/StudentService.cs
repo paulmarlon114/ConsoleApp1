@@ -496,4 +496,10 @@ public class StudentService
             Console.WriteLine($"{s.Name} - Math: {s.Math}");
         }
     }
+    public void CountGradeA()
+    {
+        int count = students.Count(s => s.GetGrade() == "A");
+
+        Console.WriteLine($"Number of A students: {count}");
+    }
 }
