@@ -45,6 +45,7 @@ class Program
             Console.WriteLine("27. Students In Range");
             Console.WriteLine("28. Total Scores");
             Console.WriteLine("29. Sort By Average");
+            Console.WriteLine("31. Overall Average");
 
 
             Console.Write("Select option: ");
@@ -165,6 +166,10 @@ class Program
 
                 case "29":
                     service.SortByAverage();
+                    break;
+
+                case "31":
+                    service.OverallAverage();
                     break;
 
                 default:

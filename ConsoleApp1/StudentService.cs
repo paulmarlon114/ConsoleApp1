@@ -467,4 +467,16 @@ public class StudentService
             Console.WriteLine($"{s.Name} - {s.GetAverage():F2}");
         }
     }
+    public void OverallAverage()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        double avg = students.Average(s => s.GetAverage());
+
+        Console.WriteLine($"Overall Average Score: {avg:F2}");
+    }
 }
