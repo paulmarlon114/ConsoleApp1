@@ -479,4 +479,21 @@ public class StudentService
 
         Console.WriteLine($"Overall Average Score: {avg:F2}");
     }
+    public void HighestMathScore()
+    {
+        if (students.Count == 0)
+        {
+            Console.WriteLine("No students available.");
+            return;
+        }
+
+        int max = students.Max(s => s.Math);
+
+        var result = students.Where(s => s.Math == max);
+
+        foreach (var s in result)
+        {
+            Console.WriteLine($"{s.Name} - Math: {s.Math}");
+        }
+    }
 }
