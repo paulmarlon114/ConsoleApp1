@@ -49,6 +49,7 @@ class Program
             Console.WriteLine("32. Highest Math Score");
             Console.WriteLine("33. Count Grade A");
             Console.WriteLine("34. Filter By First Letter");
+            Console.WriteLine("35. Clear All Students");
 
             Console.Write("Select option: ");
             var choice =  Console.ReadLine();
@@ -184,6 +185,10 @@ class Program
 
                 case "34":
                     service.FilterByFirstLetter();
+                    break;
+
+                case "35":
+                    service.ClearAllStudents();
                     break;
 
                 default:
