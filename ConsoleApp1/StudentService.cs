@@ -502,4 +502,16 @@ public class StudentService
 
         Console.WriteLine($"Number of A students: {count}");
     }
+    public void FilterByFirstLetter()
+    {
+        Console.Write("Enter first letter: ");
+        string letter = Console.ReadLine().ToLower();
+
+        var result = students.Where(s => s.Name.ToLower().StartsWith(letter));
+
+        foreach (var s in result)
+        {
+            Console.WriteLine(s.Name);
+        }
+    }
 }
